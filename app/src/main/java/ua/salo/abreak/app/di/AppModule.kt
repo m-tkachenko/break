@@ -1,4 +1,4 @@
-package ua.salo.abreak.di
+package ua.salo.abreak.app.di
 
 import dagger.Module
 import dagger.hilt.InstallIn

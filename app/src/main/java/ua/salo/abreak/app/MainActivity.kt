@@ -1,4 +1,4 @@
-package ua.salo.abreak
+package ua.salo.abreak.app
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -12,7 +12,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import dagger.hilt.android.AndroidEntryPoint
-import ua.salo.abreak.ui.theme.BreakTheme
+import ua.salo.abreak.app.ui.theme.BreakTheme
 
 @AndroidEntryPoint
 class MainActivity : ComponentActivity() {
