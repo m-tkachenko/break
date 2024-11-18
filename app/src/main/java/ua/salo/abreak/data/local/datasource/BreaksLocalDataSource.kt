@@ -9,4 +9,13 @@ class BreaksLocalDataSource(
     suspend fun insertBreak(breakEntity: BreakEntity) {
         breaksDao.insertBreak(breakEntity)
     }
+
+    suspend fun getLastBreak() =
+        breaksDao.getLastBreak()
+
+    suspend fun getAllBreaks() =
+        breaksDao.getAllBreaks()
+
+    suspend fun getBreakByPosition(position: Int) =
+        breaksDao.getBreakByNumber(position)
 }
