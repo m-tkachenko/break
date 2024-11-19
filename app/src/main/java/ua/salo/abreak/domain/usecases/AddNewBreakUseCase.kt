@@ -4,8 +4,9 @@ import kotlinx.coroutines.flow.flow
 import ua.salo.abreak.common.Resource
 import ua.salo.abreak.domain.BreaksRepository
 import ua.salo.abreak.domain.model.Break
+import javax.inject.Inject
 
-class AddNewBreakUseCase(
+class AddNewBreakUseCase @Inject constructor(
     private val repository: BreaksRepository
 ) {
     operator fun invoke(

@@ -2,6 +2,7 @@ package ua.salo.abreak.app.di
 
 import android.content.Context
 import androidx.room.Room
+import dagger.Binds
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -11,6 +12,7 @@ import ua.salo.abreak.data.local.dao.BreaksDao
 import ua.salo.abreak.data.local.database.BreaksDatabase
 import ua.salo.abreak.data.local.datasource.BreaksLocalDataSource
 import ua.salo.abreak.data.repository.BreaksRepositoryImpl
+import ua.salo.abreak.domain.BreaksRepository
 import ua.salo.abreak.domain.usecases.AddNewBreakUseCase
 import javax.inject.Singleton
 
@@ -40,10 +42,10 @@ object AppModule {
     @Provides
     fun providesBreaksRepository(
         dataSource: BreaksLocalDataSource
-    ) = BreaksRepositoryImpl(dataSource)
+    ): BreaksRepository = BreaksRepositoryImpl(dataSource)
 
     @Provides
     fun providesAddBreakUseCase(
-        repositoryImpl: BreaksRepositoryImpl
-    ) = AddNewBreakUseCase(repositoryImpl)
+        repository: BreaksRepository
+    ) = AddNewBreakUseCase(repository)
 }

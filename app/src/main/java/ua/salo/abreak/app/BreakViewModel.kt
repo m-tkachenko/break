@@ -14,7 +14,9 @@ class BreakViewModel @Inject constructor(
 ): ViewModel() {
     fun addBreak(breakModel: Break) {
         viewModelScope.launch {
-            addNewBreak.invoke(breakModel)
+            addNewBreak(breakModel).collect {
+               it.data
+            }
         }
     }
 }
